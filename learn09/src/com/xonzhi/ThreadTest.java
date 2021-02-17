@@ -8,20 +8,21 @@ import java.util.*;
  */
 public class ThreadTest {
 
-    public static List<Integer> LIST = new Vector<>();
-    public static Map map = new Hashtable();
+//    public static List<Integer> LIST = new Vector<>();
+    public static StringBuffer SB = new StringBuffer();
 
     public static void main(String[] args) {
-        for (int i = 0; i < 5; i++) {
-            Thread t = new Thread(new MyRun());
-            t.start();
+
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < 1000; i++) {
+            list.add(UUID.randomUUID().toString());
         }
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+
+        StringBuilder sb = new StringBuilder();
+        for (String s : list) {
+            sb.append(s).append("_");
         }
-        System.out.println("---------list共有" + LIST.size() + "个数据");
+        System.out.println(sb);
     }
 
 }
