@@ -9,7 +9,7 @@ import java.io.File;
  */
 public class FileOperation {
     public static void main(String[] args) {
-        File file =new File("/home/arvin/Programming/Java/Java-learning");
+        File file =new File("./");
         FileTree fileTree = new FileTree(file);
         fileTree.filePrint();
     }
